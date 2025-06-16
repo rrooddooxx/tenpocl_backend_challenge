@@ -22,7 +22,7 @@ Servicio Backend API REST construido en Spring Boot, que expone servicios de cá
 
 ## Componentes
 
-El proyecto está compuesto por **dos microservicios** independientes:
+El proyecto está compuesto por **dos microservicios** independientes y una **base de datos**:
 
 ### 1. **Servicio: ms-calculator** (Puerto 8080)
 Servicio principal que maneja:
@@ -30,7 +30,26 @@ Servicio principal que maneja:
 - Sistema de caché (30 minutos TTL)
 - Registro asíncrono de historial de llamadas
 - Conexión con la base de datos PostgreSQL
-- Este servicio fue diseñado con una estructura de proyecto que sigue una arquitectura *CLEAN*, basada en *dominio* (contextos de negocio) y con un *vertical slicing* dentro de cada feature.
+  - Este servicio fue diseñado con una estructura de proyecto que sigue una  híbrida entre 
+    *Clean Architecture* y *Vertical Slicing*,
+    basada en *dominio* (contextos de dominio, inspirado en Domain-Driven-Design)  dentro de cada feature (división de capas de arquitectura dentro del feature).
+    - Ejemplo de la estructura con explicaciones:
+
+    ````
+    - com.tenpo.mscalculator
+      - calculation     # feature: cálculos c/ porcentaje adicional
+          - docs                      # decorador custom que abstrae los docs swagger
+          - domain                    # objetos de dominio
+          - dto                       # objetos de transporte de datos (o dto's)
+          - mapper                    # métodos mapeadores (por ejemplo, de dto's a objeto de dominio, o de entidad relacional a objeto de dominio)
+            - CalculationController   # controlador de transporte http
+            - CalculationService      # lógica de negocios ó servicio
+      - config          # implementaciones de @Configuration
+      - history         # feature: historial de solicitudes
+      - infrastructure  # capa de infraestructura
+      - percentage      # feature: obtener porcentaje dinámico
+      - shared          # utilitarios compartidos (sin lógica de negocios)
+    ````
 
 ### 2. **Servicio: ms-percentage** (Puerto 8081)
 Microservicio que proporciona:
