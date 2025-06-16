@@ -134,6 +134,7 @@ docker-compose ...
 ```  
 
 - Opción 2: Con Imágenes desde Docker Hub:
+  > NOTA: Las imágenes subidas a Docker Hub soportan arquitecturas `linux/amd64` y `linux/arm64`
 ```bash
   docker compose -f docker-compose.remote.yml up
   # o si quiere forzar el rebuild de los contenedores:
