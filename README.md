@@ -212,12 +212,26 @@ Obtiene el historial de llamadas con paginación.
       ...
     ]
   },
-  "page": {
-    "size": 10,
-    "totalElements": 50,
-    "totalPages": 5,
-    "number": 0
-  }
+  "_links": {
+        "first": {
+            "href": "http://localhost:8080/api/v1/history?order=DESC&page=0&size=4&sort=requestDate,desc"
+        },
+        "self": {
+            "href": "http://localhost:8080/api/v1/history?order=DESC&page=0&size=4&sort=requestDate,desc"
+        },
+        "next": {
+            "href": "http://localhost:8080/api/v1/history?order=DESC&page=1&size=4&sort=requestDate,desc"
+        },
+        "last": {
+            "href": "http://localhost:8080/api/v1/history?order=DESC&page=2&size=4&sort=requestDate,desc"
+        }
+    },
+    "page": {
+        "size": 4,
+        "totalElements": 11,
+        "totalPages": 3,
+        "number": 0
+    }
 }
 ```
 
