@@ -1,0 +1,33 @@
+spring:
+    application:
+        name: ms_calculator_tenpo
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: false
+server:
+    port: 0
+    servlet:
+        context-path: /api/v1
+    error:
+        include-stacktrace: never
+        include-binding-errors: never
+        include-exception: false
+external:
+    percentage-service:
+        base-url: http://localhost:8081/api
+        endpoints:
+            get-percentage: /v1/percentage
+            health: /v1/actuator/health
+        timeout: 5s
+cache:
+    percentage-service:
+        ttl: 30m
+docs-info:
+    app:
+        title: Tenpo Calculator Backend Service
+        description: Backend Challenge Test Environment
+        version: 1.0.0-TEST
+logging:
+    level:
+        com.tenpo.mscalculator: DEBUG
