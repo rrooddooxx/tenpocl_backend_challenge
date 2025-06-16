@@ -105,12 +105,22 @@ cd TenpoChallengeBackend
 ```
 
 2. **Levantar todos los servicios**
+- Opción 1: Con Imágenes buildeadas localmente:
 ```bash
-docker compose up -d
+docker compose -f docker-compose.yml up
 # o si quiere forzar el rebuild de los contenedores:
-docker compose up --build
+docker compose -f --build docker-compose.yml up
 # o si utiliza una versión anterior de docker compose:
-docker-compose up ...
+docker-compose ...
+```  
+
+- Opción 2: Con Imágenes desde Docker Hub:
+```bash
+  docker compose -f docker-compose.remote.yml up
+  # o si quiere forzar el rebuild de los contenedores:
+  docker compose -f --build docker-compose.remote.yml up
+  # o si utiliza una versión anterior de docker compose:
+  docker-compose ...
 ```
 
 3. **Verificar que los servicios están funcionando**
@@ -133,13 +143,16 @@ docker compose logs -f ms-percentage
 
 ### Detener los servicios
 ```bash
+docker compose down
+# ó en versiones anteriores del compose CLI:
 docker-compose down
 ```
 
 ### Resetear la base de datos
 ```bash
-docker-compose down -v  # elimina el volumen de postgresql
-docker-compose up -d
+docker compose down -v # elimina el volumen de postgresql
+# ó en versiones anteriores del compose CLI:
+docker-compose down -v  
 ```
 
 ## Variables de Entorno

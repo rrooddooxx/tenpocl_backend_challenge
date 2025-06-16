@@ -1,0 +1,33 @@
+services:
+    db:
+        image: postgres
+        container_name: pgsql_calc_tenpo
+        restart: always
+        shm_size: 128mb
+        environment:
+            POSTGRES_DB: calculator_tenpo
+            POSTGRES_USER: calculator_tenpo
+            POSTGRES_PASSWORD: "!!db@t3npo_c4lc^^"
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./docker/pgdata:/var/lib/postgresql/data
+    ms-calculator:
+        image: widew3b/ms-calculator-tenpo:latest
+        container_name: ms-calculator-service
+        ports:
+            - "8080:8080"
+        environment:
+            - MSCALC_DB_HOST=db
+            - MSCALC_DB_PORT=5432
+            - MSCALC_DB_NAME=calculator_tenpo
+            - MSCALC_DB_USER=calculator_tenpo
+            - MSCALC_DB_PASSWORD=!!db@t3npo_c4lc^^
+            - MSCALC_API_VERSION=v1
+            - MSCALC_API_CACHE_TTL=30m
+            - MSCALC_WEBSERVICE_PERCENTAGE=http://ms-percentage:8081/api
+    ms-percentage:
+        image: widew3b/ms-percentage-tenpo:latest
+        container_name: ms-percentage-service
+        ports:
+            - "8081:8080"
