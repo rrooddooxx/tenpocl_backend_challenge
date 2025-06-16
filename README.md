@@ -101,7 +101,7 @@ Microservicio que proporciona:
 1. **Clonar el repositorio**
 ```bash
 git clone <url-del-repositorio>
-cd TenpoChallengeBackend
+cd tenpocl_backend_challenge
 ```
 
 2. **Levantar todos los servicios**
