@@ -5,7 +5,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)](https://www.docker.com/)
 
-> **Backend Challenge x Sebastián Kravetz @ TENPO Chile**
+> **Backend Challenge x Sebastián Kravetz @ Tenpo CL**
 
 Servicio Backend API REST construido en Spring Boot, que expone servicios de cálculo con aplicación de porcentaje adicional. Cuenta con caché para el valor del porcentaje obtenido de servicio externo y registro asíncrono de historial de llamadas. Esto fue desarrollado como parte del desafío técnico de Backend Engineer para Tenpo CL.
 
