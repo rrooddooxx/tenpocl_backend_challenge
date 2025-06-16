@@ -249,7 +249,7 @@ Obtiene un porcentaje dinámico.
 
 ## Testing
 
-![test_exec_results.png](test_exec_results.png)
+![test_exec_results.png](assets/test_exec_results.png)
 
 ### Ejecutar Tests Unitarios
 ```bash
@@ -269,6 +269,8 @@ Obtiene un porcentaje dinámico.
 Una vez que la aplicación está ejecutándose, se puede acceder a la documentación interactiva generada con Swagger UI:
 
 **URL**: http://localhost:8080/api/v1/swagger-ui/index.html
+
+![img.png](assets/swagger_ui.png)
 
 ### OpenAPI Spec
 - **JSON**: http://localhost:8080/api/v1/api-docs
