@@ -187,7 +187,7 @@ Realiza cálculo con porcentaje dinámico adicional.
 ```
 
 #### `GET /api/v1/history?page=0&size=10&order=DESC`
-Obtiene el historial de llamadas con paginación.
+Obtiene el historial de llamadas con paginación y links de navegación a página previa o siguiente (HATEOAS).
 
 **Ejemplo Response:**
 ```json
