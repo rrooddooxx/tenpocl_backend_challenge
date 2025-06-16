@@ -1,6 +1,7 @@
 package com.tenpo.mscalculator.history.docs;
 
 import com.tenpo.mscalculator.history.dto.HistoryResponseDto;
+import com.tenpo.mscalculator.history.model.HistoryResponseModel;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -14,7 +15,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Operation(
-    summary = "Obtener Historial de Solicitudes",
+    summary = "Obtener Historial de Solicitudes. Entrega resultado paginado.",
     description =
         "Historial paginado de todas las solicitudes al servicio de cálculos con porcentaje.",
     parameters = {
@@ -41,7 +42,7 @@ import java.lang.annotation.Target;
       @ApiResponse(
           responseCode = "200",
           description = "Historial obtenido exitosamente",
-          content = @Content(schema = @Schema(implementation = HistoryResponseDto.class))),
+          content = @Content(schema = @Schema(implementation = HistoryResponseModel.class))),
       @ApiResponse(
           responseCode = "500",
           description =

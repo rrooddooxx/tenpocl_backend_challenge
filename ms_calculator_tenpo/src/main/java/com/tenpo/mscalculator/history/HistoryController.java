@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/history")
 @RequiredArgsConstructor
 @Slf4j(topic = "HistoryController")
-@Tag(name = "History", description = "Request history management and retrieval")
+@Tag(name = "History", description = "Historial paginado de todas las solicitudes al servicio de cálculos con porcentaje.")
 public class HistoryController {
   private final HistoryService historyService;
   private final HistoryRespondeModelAssembler historyRespondeModelAssembler;

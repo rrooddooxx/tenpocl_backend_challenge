@@ -11,7 +11,7 @@ Servicio Backend API REST construido en Spring Boot, que expone servicios de cá
 
 ## Tabla de Contenidos
 
-- [Arquitectura](#arquitectura)
+- [Componentes](#componentes)
 - [Características Principales](#características-principales)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Configuración y Ejecución](#configuración-y-ejecución)
@@ -20,11 +20,11 @@ Servicio Backend API REST construido en Spring Boot, que expone servicios de cá
 - [Testing](#testing)
 - [Documentación API](#documentación)
 
-## Arquitectura
+## Componentes
 
 El proyecto está compuesto por **dos microservicios** independientes:
 
-### 1. **ms-calculator** (Puerto 8080)
+### 1. **Servicio: ms-calculator** (Puerto 8080)
 Servicio principal que maneja:
 - Cálculos matemáticos con porcentajes dinámicos
 - Sistema de caché (30 minutos TTL)
@@ -32,10 +32,16 @@ Servicio principal que maneja:
 - Conexión con la base de datos PostgreSQL
 - Este servicio fue diseñado con una estructura de proyecto que sigue una arquitectura *CLEAN*, basada en *dominio* (contextos de negocio) y con un *vertical slicing* dentro de cada feature.
 
-### 2. **ms-percentage** (Puerto 8081)
+### 2. **Servicio: ms-percentage** (Puerto 8081)
 Microservicio que proporciona:
 - Porcentajes dinámicos
 - Simulación de servicio externo
+
+### 3. **Base de datos** (Puerto 5432)
+- Se incluye:
+  - Definición SQL con la que se pobló originalmente la DB: [`/assets/db.sql`](./assets/db.sql)
+  - Volumen de Docker con datos poblados y conectado al contenedor de Postgres: 
+    [`/docker/pgdata`](./docker/pgdata)
 
 ## Características Principales
 

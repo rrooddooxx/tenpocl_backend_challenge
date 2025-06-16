@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
@@ -23,11 +24,12 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
 public class RequestRegisterFilter extends OncePerRequestFilter {
 
   private final ApplicationEventPublisher applicationEventPublisher;
+  private final String[] allowedPaths = {"/calculation"};
 
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
     String path = EndpointUtils.servletEndpointMapper(request);
-    return path.startsWith("/history");
+    return Arrays.stream(allowedPaths).noneMatch(path::startsWith);
   }
 
   @Override

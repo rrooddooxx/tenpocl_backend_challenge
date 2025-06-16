@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/calculation")
 @RequiredArgsConstructor
 @Slf4j(topic = "CalculationController")
-@Tag(name = "Calculation", description = "Mathematical operations with dynamic percentage adjustments")
+@Tag(name = "Calculation", description = "Realiza cálculo de valores y aplica porcentaje adicional.")
 public class CalculationController {
 
   private final CalculationService calculationService;

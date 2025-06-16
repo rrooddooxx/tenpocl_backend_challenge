@@ -24,7 +24,7 @@ services:
             - MSCALC_DB_USER=calculator_tenpo
             - MSCALC_DB_PASSWORD=!!db@t3npo_c4lc^^
             - MSCALC_API_VERSION=v1
-            - MSCALC_API_CACHE_TTL=29m
+            - MSCALC_API_CACHE_TTL=30m
             - MSCALC_WEBSERVICE_PERCENTAGE=http://ms-percentage:8081/api
     ms-percentage:
         build: ./ms_percentage_tenpo
