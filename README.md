@@ -303,6 +303,13 @@ Obtiene un porcentaje dinámico.
 
 ## Documentación
 
+### Postman
+
+- [Colección en Postman.com](https://valhallaa.postman.co/workspace/STUDY_EXERCISES~0c454d98-23d0-4744-bc25-0400b0ca6e6c/collection/29461457-d2b2dd2a-5654-4666-9b21-c3cc6c33fc00?action=share&creator=29461457&active-environment=29461457-1bc51ba4-60f2-4719-ae6a-453ad97fb42e)
+  - Accesible inmediatamente pero requiere cuenta en [postman.com](https://identity.getpostman.com/)
+- [Colección en archivo .JSON](./assets/SPRING%20BOOT%20-%20TENPO%20CHALLENGE%20-%20CALCULATOR%20MICROSERVICE.postman_collection.json)
+  - Para descargar y cargar en [Postman](https://www.postman.com/downloads/) u otro compatible (ej: [Bruno](https://www.usebruno.com))
+
 ### Swagger UI
 Una vez que la aplicación está ejecutándose, se puede acceder a la documentación interactiva generada con Swagger UI:
 

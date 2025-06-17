@@ -16,12 +16,4 @@ public class RecordMapper {
       throw new RuntimeException("Failed to parse Json string to Map", ex);
     }
   }
-
-  public static Map<String, Object> toMapFromObject(Object object) {
-    try {
-      return MAPPER.convertValue(object, new TypeReference<>() {});
-    } catch (Exception ex) {
-      throw new RuntimeException("Failed to parse Object to Map", ex);
-    }
-  }
 }

@@ -38,4 +38,4 @@ services:
                 - "linux/arm64"
         container_name: ms-percentage-service
         ports:
-            - "8081:8080"
+            - "8081:8081"

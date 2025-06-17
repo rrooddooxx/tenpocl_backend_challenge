@@ -16,7 +16,7 @@ public class RequestHistoryTypeConverter
 
   @Override
   public RequestHistoryType convertToEntityAttribute(Integer dbData) {
-    if (dbData == null) return null;
+    if (dbData == null) return RequestHistoryType.UNKNOWN;
 
     return Arrays.stream(RequestHistoryType.values())
         .filter(val -> val.getRequestId().equals(dbData))

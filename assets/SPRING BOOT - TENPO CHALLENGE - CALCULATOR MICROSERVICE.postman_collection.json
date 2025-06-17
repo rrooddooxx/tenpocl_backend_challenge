@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "d2b2dd2a-5654-4666-9b21-c3cc6c33fc00",
+		"name": "SPRING BOOT - TENPO CHALLENGE - CALCULATOR MICROSERVICE",
+		"description": "Documentación de endpoints, con ejemplos de response exitosos.\n\nServicios: ms_calculation (puerto 8080) y ms_percentage (puerto 8081)\n\nHosts configurados en variables de la carpeta.\n\n---\n\n🛠️ Desarrollado por Sebastián Kravetz para Tenpo CL.\n\n✉️ [root@sebastiankravetz.dev](https://mailto:root@sebastiankravetz.dev)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29461457",
+		"_collection_link": "https://lunar-shuttle-26108.postman.co/workspace/0c454d98-23d0-4744-bc25-0400b0ca6e6c/collection/29461457-d2b2dd2a-5654-4666-9b21-c3cc6c33fc00?action=share&source=collection_link&creator=29461457"
+	},
+	"item": [
+		{
+			"name": "ms_calculation",
+			"item": [
+				{
+					"name": "calculation",
+					"item": [
+						{
+							"name": "[v1] calculate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstAmount\": 8.0,\n    \"secondAmount\": 7.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CALC}}/v1/calculation/calculate",
+									"host": [
+										"{{HOST_MS_CALC}}"
+									],
+									"path": [
+										"v1",
+										"calculation",
+										"calculate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstAmount\": 8.0,\n    \"secondAmount\": 7.0\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/v1/calculation/calculate",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"calculation",
+												"calculate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "42"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Jun 2025 10:00:18 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 17.85,\n    \"percentageApplied\": 0.19\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "history",
+					"item": [
+						{
+							"name": "[v1] history",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstAmount\": 1.0,\n    \"secondAmount\": 1.0\n}"
+								},
+								"url": {
+									"raw": "{{HOST_MS_CALC}}/v1/history?page=0&size=4&order=DESC",
+									"host": [
+										"{{HOST_MS_CALC}}"
+									],
+									"path": [
+										"v1",
+										"history"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "4"
+										},
+										{
+											"key": "order",
+											"value": "DESC"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SUCCESS",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstAmount\": 1.0,\n    \"secondAmount\": 1.0\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/v1/history?page=0&size=4&order=DESC",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"history"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "4"
+												},
+												{
+													"key": "order",
+													"value": "DESC"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Jun 2025 09:59:10 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_embedded\": {\n        \"records\": [\n            {\n                \"requestId\": 17,\n                \"requestDate\": \"2025-06-17T09:58:31.357657Z\",\n                \"requestEndpoint\": \"/calculation/calculate\",\n                \"requestType\": \"SUCCESS\",\n                \"requestParameters\": {\n                    \"firstAmount\": 8,\n                    \"secondAmount\": 7\n                },\n                \"responseBody\": {\n                    \"result\": 17.85,\n                    \"percentageApplied\": 0.19\n                }\n            },\n            {\n                \"requestId\": 16,\n                \"requestDate\": \"2025-06-17T09:55:01.391071Z\",\n                \"requestEndpoint\": \"/calculation/calculate\",\n                \"requestType\": \"SUCCESS\",\n                \"requestParameters\": {\n                    \"firstAmount\": 1,\n                    \"secondAmount\": 7\n                },\n                \"responseBody\": {\n                    \"result\": 9.52,\n                    \"percentageApplied\": 0.19\n                }\n            },\n            {\n                \"requestId\": 15,\n                \"requestDate\": \"2025-06-17T00:04:52.987851Z\",\n                \"requestEndpoint\": \"/calculation/calculate\",\n                \"requestType\": \"SUCCESS\",\n                \"requestParameters\": {\n                    \"firstAmount\": 1,\n                    \"secondAmount\": 7\n                },\n                \"responseBody\": {\n                    \"result\": 9.52,\n                    \"percentageApplied\": 0.19\n                }\n            },\n            {\n                \"requestId\": 14,\n                \"requestDate\": \"2025-06-17T00:02:30.024014Z\",\n                \"requestEndpoint\": \"/calculation/calculate\",\n                \"requestType\": \"SUCCESS\",\n                \"requestParameters\": {\n                    \"firstAmount\": 1,\n                    \"secondAmount\": 7\n                },\n                \"responseBody\": {\n                    \"result\": 9.52,\n                    \"percentageApplied\": 0.19\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"first\": {\n            \"href\": \"http://localhost:8080/api/v1/history?order=DESC&page=0&size=4&sort=requestDate,desc\"\n        },\n        \"self\": {\n            \"href\": \"http://localhost:8080/api/v1/history?order=DESC&page=0&size=4&sort=requestDate,desc\"\n        },\n        \"next\": {\n            \"href\": \"http://localhost:8080/api/v1/history?order=DESC&page=1&size=4&sort=requestDate,desc\"\n        },\n        \"last\": {\n            \"href\": \"http://localhost:8080/api/v1/history?order=DESC&page=4&size=4&sort=requestDate,desc\"\n        }\n    },\n    \"page\": {\n        \"size\": 4,\n        \"totalElements\": 17,\n        \"totalPages\": 5,\n        \"number\": 0\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ms_percentage",
+			"item": [
+				{
+					"name": "[v1] percentage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_PERC}}/v1/percentage",
+							"host": [
+								"{{HOST_MS_PERC}}"
+							],
+							"path": [
+								"v1",
+								"percentage"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/percentage",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"percentage"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Jun 2025 10:01:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"percentage\": 0.19\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST_MS_CALC",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "HOST_MS_PERC",
+			"value": "http://localhost:8081/api",
+			"type": "string"
+		}
+	]
+}

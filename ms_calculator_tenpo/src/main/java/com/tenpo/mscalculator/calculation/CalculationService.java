@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 public class CalculationService {
 
   private final PercentageService percentageService;
-  private final HistoryService historyService;
 
   public CalculationPercentageAdjusted calculateWithDynamicPercentage(
       CalculationPercentageAdjusted input) {

@@ -1,6 +1,5 @@
 package com.tenpo.mscalculator.history.docs;
 
-import com.tenpo.mscalculator.history.dto.HistoryResponseDto;
 import com.tenpo.mscalculator.history.model.HistoryResponseModel;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

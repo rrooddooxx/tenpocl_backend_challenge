@@ -34,7 +34,7 @@ public class WebClientConfig {
   private ExchangeFilterFunction logResponse() {
     return ExchangeFilterFunction.ofResponseProcessor(
         res -> {
-          log.info("Response Status ({})-->[{}]", res.request().getURI(), res.statusCode());
+          log.info("Response ({})-->[{}]", res.request().getURI(), res.statusCode());
           return Mono.just(res);
         });
   }
