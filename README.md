@@ -315,7 +315,7 @@ Una vez que la aplicación está ejecutándose, se puede acceder a la documentac
 
 **URL**: http://localhost:8080/api/v1/swagger-ui/index.html
 
-![img.png](assets/swagger_ui.png)
+![img.png](assets/swagger_screenshot.png)
 
 ### OpenAPI Spec
 - **JSON**: http://localhost:8080/api/v1/api-docs
