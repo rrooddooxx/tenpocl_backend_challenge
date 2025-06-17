@@ -30,9 +30,8 @@ Servicio principal que maneja:
 - Sistema de caché (30 minutos TTL)
 - Registro asíncrono de historial de llamadas
 - Conexión con la base de datos PostgreSQL
-  - Este servicio fue diseñado con una estructura de proyecto que sigue una  híbrida entre 
-    *Clean Architecture* y *Vertical Slicing*,
-    basada en *dominio* (contextos de dominio, inspirado en Domain-Driven-Design)  dentro de cada feature (división de capas de arquitectura dentro del feature).
+  - Este servicio fue diseñado con una estructura de proyecto que sigue una arquitectura híbrida entre 
+    *Clean Architecture* y *Vertical Slicing*, separando módulos principalmente basados en *dominio* (contextos de negocio, inspirado en Domain-Driven-Design), y luego dentro de cada feature definendo capas de arquitectura que tengan alta cohesión (modelos, dtos, servicios, controllers).
     - Ejemplo de la estructura con explicaciones:
 
     ````
